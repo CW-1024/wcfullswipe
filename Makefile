@@ -11,7 +11,7 @@ else ifeq ($(SCHEME),rootless)
 endif
 
 TWEAK_NAME = WCFullSwipe
-PACKAGE_VERSION = 1.2
+PACKAGE_VERSION = 1.3
 DEBUG = 0
 
 WCFullSwipe_FILES = Tweak.x
