@@ -48,10 +48,7 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    if (![self isKindOfClass:NSClassFromString(@"BaseMsgContentViewController")]) {
-        return NO;
-    }
-    
+
     if (gestureRecognizer != self.navigationController.interactivePopGestureRecognizer && 
         [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
         
