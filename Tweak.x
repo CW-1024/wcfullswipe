@@ -33,6 +33,11 @@
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+
+    if (![self isKindOfClass:NSClassFromString(@"BaseMsgContentViewController")]) {
+        return %orig;
+    }
+
     if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
         UIPanGestureRecognizer *panGesture = (UIPanGestureRecognizer *)gestureRecognizer;
         CGPoint translation = [panGesture translationInView:self.view];
