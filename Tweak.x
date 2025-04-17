@@ -8,6 +8,10 @@
 
 - (void)viewDidLoad {
     %orig;
+    
+    if ([self isKindOfClass:NSClassFromString(@"MMAssetPickerController")]) {
+        return;
+    }
 
     UIGestureRecognizer *edgeGesture = self.navigationController.interactivePopGestureRecognizer;
 
