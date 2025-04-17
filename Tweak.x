@@ -1,13 +1,17 @@
 #import <UIKit/UIKit.h>
 
-@interface BaseMsgContentViewController : UIViewController
+@interface MMUIViewController : UIViewController
 @property (nonatomic, readonly) UINavigationController *navigationController;
 @end
 
-%hook BaseMsgContentViewController
+%hook MMUIViewController
 
 - (void)viewDidLoad {
     %orig;
+    
+    if (![self isKindOfClass:NSClassFromString(@"BaseMsgContentViewController")]) {
+        return;
+    }
 
     UIGestureRecognizer *edgeGesture = self.navigationController.interactivePopGestureRecognizer;
 
